@@ -1,0 +1,20 @@
+syntax = "proto3";
+package etcd_sync;
+
+option go_package = "github.com/HouLPcode/etcd_sync";
+
+// 请求
+message SyncRequest {
+  string msg = 1;
+}
+
+// 响应
+message SyncResponse {
+  string msg = 1;
+}
+
+// 切换服务
+service SyncService {
+  // 执行切换操作
+  rpc Debug(SyncRequest) returns (SyncResponse) {}
+}
